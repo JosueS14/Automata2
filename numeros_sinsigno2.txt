@@ -1,0 +1,14 @@
+%option noyywrap
+%{
+	#include<stdio.h>
+%}
+DIGIT [0-9]
+%%
+^{DIGIT}+ { printf("Numero sin signo\n"); }
+. ;
+%%
+int main()
+{
+	yylex();
+	return 0;
+}
